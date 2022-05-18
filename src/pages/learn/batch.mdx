@@ -359,7 +359,7 @@ When you run CREATE TABLE with a LOCATION that already contains data stored usin
 
 Delta Lake supports generated columns which are a special type of columns whose values are automatically generated based on a user-specified function over other columns in the Delta table. When you write to a table with generated columns and you do not explicitly provide values for them, Delta Lake automatically computes the values. For example, you can automatically generate a date column (for partitioning the table by date) from the timestamp column; any writes into the table need only specify the data for the timestamp column. However, if you explicitly provide values for them, the values must satisfy the constraint (&lt;value&gt; &lt;=&gt; &lt;generation expression&gt;) IS TRUE or the write will fail with an error.
 
-<Info title="Important!" level="warning">
+<Info title="Important!" level="danger">
   Tables created with generated columns have a higher table writer protocol version than the default. See Table protocol versioning to understand table protocol versioning and what it means to have a higher version of a table protocol version.
 </Info>
 
